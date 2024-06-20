@@ -18,12 +18,12 @@ require_once("../templates/boostrap.php");
   //print_r($atendidos);
 ?>
 <body> 
-<div class="container">
+<div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <h2>Lista de Espera de Turnos</h2>
       <div class="row">
-        <div class="col">
+        <div class="col-5">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -56,27 +56,27 @@ require_once("../templates/boostrap.php");
             </tbody>
           </table>
         </div>
-        <div class="col">
+        <div class="col-7">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
+             <!--  <div class="carousel-item active">
+                <img src="../../public/img/Cabildo-Mayor-Yanakona.jpg" class="d-block w-50 img-fluid" alt="">
+              </div> -->
               <div class="carousel-item active">
-                <img src="../../public/img/Cabildo-Mayor-Yanakona.jpg" class="d-block w-50" alt="">
+                <img style="object-fit: cover;" src="../../public/img/logo2.jpg" class="d-block w-100" alt="">
               </div>
               <div class="carousel-item">
-                <img src="../../public/img/logo2.jpg" class="d-block w-100" alt="">
+                <img style="object-fit: cover;" src="../../public/img/carro2.jpeg" class="img-fluid" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="../../public/img/carro2.jpeg" class="d-block w-100" alt="...">
+                <img style="object-fit: cover;" src="../../public/img/paramo.jpg" class="d-block w-100" alt="">
               </div>
-              <div class="carousel-item">
-                <img src="../../public/img/paramo.jpg" class="d-block w-100" alt="">
-              </div>
-              <div class="carousel-item">
+              <!-- <div class="carousel-item">
                 <img src="../../public/img/San_Sebastian.jpg" class="d-block w-100" alt="">
               </div>
               <div class="carousel-item">
                 <img src="../../public/img/Paramo2.jpg" class="d-block w-100" alt="">
-              </div>
+              </div> -->
               <!-- Agrega más imágenes si es necesario -->
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
