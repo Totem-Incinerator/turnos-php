@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* centro el contenido del body */
+ 
+.contenedor {
+    text-align: center;
+    border: solid 3px #1044f1;
+    position:row;
+ 
+  }
+body{
+ 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+.container-form{
+ 
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+    transition: all 1s ease;
+    height: 500px;
+ 
+    max-width: 800px;
+    margin: 10px;
+}
+.information{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(232,232,232,1) 0%, rgba(5,132,24,1) 0%, rgba(221,244,221,1) 12%);
+    /* background-image: linear-gradient(to right top, #057829, #548f4a, #83a66f, #adbe98, #d2d7c6); */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+ 
+}
+.info-childs{
+    width: 100%;
+    padding: 0 30px;
+}
+.info-childs h2{
+    font-size:  2.5rem;
+    color: rgb(41, 40, 40)
+}
+.info-childs p{
+    margin: 15px 1px;
+    color: #404A3B
+}
+.info-childs input{
+    background-color: transparent;
+    outline: none;
+    border: solid 3px #086F16;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #086F16;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+.info-childs input:hover{
+    background-color: #086F16;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, .1);
+}
+.form-infomation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    background-image: linear-gradient(to right top, #fafbfa, #f7faf7, #f3f9f4, #f0f8f1, #ecf7ee);
+    /* background-color: #f8f8f8; */
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.form-information-childs{
+    padding: 0 30px;
+}
+.form-information-childs h2{
+    color: #333;
+    font-size: 2rem;
+}
+.form-information-childs p{
+    color: #555;
+ 
+}
+.icons{
+    margin: 15px 0;
+}
+.icons i{
+    border-radius: 50%;
+    padding:  15px;
+    cursor: pointer;
+    margin:0 10px;
+    color: #9191bd;
+    border: solid thin ·9191bd;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, .1);
+}
+.icons i:hover{
+    background-color: #086F16;
+    color: #fff;
+}
+.form{
+    margin: 30px 0 0 0;
+ 
+}
+.form label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, .1);
+}
+.form label input{
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #333;
+ 
+ 
+}
+
+.form input[type="submit"]{
+    background-color: #086F16;
+    color: #fff;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, .1);
+}
+form input[type="submit"]{
+    background-color:#7a7a9a;
+}
+
+/* estilos para crear turno */
+ 
