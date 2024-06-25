@@ -107,11 +107,14 @@ require_once("../templates/boostrap.php");
       interval: 2000 // Cambia 2000 por el intervalo de tiempo deseado en milisegundos
     });
   });
+  setTimeout(() => {
+    location.reload()
+  }, 2000)
 </script>
 </body>
    </html> 
  <script src="../turno.js"></script>
-
+ 
 <?php 
   require_once("../templates/boostrapjs.php");
 ?>
