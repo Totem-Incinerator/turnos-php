@@ -15,7 +15,10 @@ require_once("../templates/boostrap.php");
 
   $turno=new Turno();
   $atendidos=$turno->obtenerAtendidos();
-  //print_r($atendidos);
+  $ultimo=$turno->obtenerUltimo();
+ 
+  $turnosiguiente = $ultimo[0]["nombre_cliente"]." ".$ultimo[0]["apellidos_cliente"]." - Turno ". $ultimo[0]["numero_turno"];
+  print_r($turnosiguiente);
 ?>
 <body> 
 <div class="container-fluid">
@@ -24,10 +27,14 @@ require_once("../templates/boostrap.php");
       <h2>Lista de Espera de Turnos</h2>
       <div class="row">
         <div class="col-5">
+          <div class="alert alert-success fw-bolder"  role="alert">
+            <?=$turnosiguiente?>
+            
+          </div>
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th scope="col" color="red"S>Módulo</th>
+                <th scope="col" color="red"S>Nombre</th>
                 <th scope="col">Turno</th>
               </tr>
             </thead>
@@ -46,7 +53,8 @@ require_once("../templates/boostrap.php");
                      
                         ?>
               </tr>
-                <td>Modulo 1</td>
+              <td><?=$turno["nombre_cliente"]?></td>   
+
                 <td><?=$resultado?></td>   
               </tr>
                 <?php
@@ -63,7 +71,7 @@ require_once("../templates/boostrap.php");
                 <img src="../../public/img/Cabildo-Mayor-Yanakona.jpg" class="d-block w-50 img-fluid" alt="">
               </div> -->
               <div class="carousel-item active">
-                <img style="object-fit: cover;" src="../../public/img/logo2.jpg" class="d-block w-100" alt="">
+                <img style="object-fit: cover;" src="../../public/img/paramo.jpg" class="d-block w-100" alt="">
               </div>
               <div class="carousel-item">
                 <img style="object-fit: cover;" src="../../public/img/carro2.jpeg" class="img-fluid" alt="...">
@@ -79,14 +87,14 @@ require_once("../templates/boostrap.php");
               </div> -->
               <!-- Agrega más imágenes si es necesario -->
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Anterior</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Siguiente</span>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -104,12 +112,12 @@ require_once("../templates/boostrap.php");
 
     // Configurar el intervalo del carrusel para que se mueva automáticamente
     $('.carousel').carousel({
-      interval: 2000 // Cambia 2000 por el intervalo de tiempo deseado en milisegundos
+      interval: 1000 // Cambia 2000 por el intervalo de tiempo deseado en milisegundos
     });
   });
   setTimeout(() => {
     location.reload()
-  }, 2000)
+  }, 5000)
 </script>
 </body>
    </html> 

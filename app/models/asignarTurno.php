@@ -37,16 +37,27 @@
     }
 
 
+    function obtenerHora() {
+        date_default_timezone_set('America/Bogota');
+        $dateTime = new DateTime();
+        $horaActual = $dateTime->format('H:i:s');
+        return $horaActual;
+    }
+
+
+
     function guardar($nombre_cliente, $apellidos_cliente, $tipo_cc, $cedula, $fecha_hora, $tipo_turno) {
 
              
         try {
             $db = $this->db; // Acceder a la conexión a la base de datos
 
+            date_default_timezone_set('America/Bogota');
             $fecha_hora = date('Y-m-d H:i:s');
+            $horaActual = date('H:i:s');
             
-            $sql = "INSERT INTO turnos (nombre_cliente, apellidos_cliente, tipo_cc, cedula, fecha, tipo_turno, numero_turno) 
-                    VALUES (:nombre_cliente, :apellidos_cliente,:tipo_cc, :cedula, :fecha_hora, :tipo_turno,:numero_turno)";
+            $sql = "INSERT INTO turnos (nombre_cliente, apellidos_cliente, tipo_cc, cedula, fecha, hora_inicio, tipo_turno, numero_turno) 
+                    VALUES (:nombre_cliente, :apellidos_cliente,:tipo_cc, :cedula, :fecha_hora, :hora_inicio, :tipo_turno,:numero_turno)";
 
             $stmt = $db->prepare($sql);
 
@@ -57,6 +68,7 @@
                 ':tipo_cc' => $tipo_cc,
                 ':cedula' => $cedula,
                 ':fecha_hora' => $fecha_hora,
+                ':hora_inicio'=> $horaActual,
                 ':tipo_turno' => $tipo_turno,  
                 ':numero_turno'=> $this->contador       
             ]);

@@ -52,7 +52,7 @@ class Turno extends Conexion{
             
         
         // Preparación de la consulta SQL
-        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 1 ORDER BY id_turno DESC LIMIT 6;");
+        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 0 ORDER BY id_turno DESC LIMIT 6;");
     
         // Ejecución de la consulta
         $consulta->execute();
@@ -70,8 +70,29 @@ class Turno extends Conexion{
         return $turnos;
     }
 
+    
    
-
+    function obtenerUltimo(): array {
+            
+        
+        // Preparación de la consulta SQL
+        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 1 ORDER BY t.hora_inicio DESC;");
+    
+        // Ejecución de la consulta
+        $consulta->execute();
+    
+        // Obtención de los datos en un array
+        $turnos = [];
+        while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $turnos[]= $fila;
+        }
+    
+        // Cierre de la conexión
+        $db = null;
+    
+        // Retorno del array con los datos
+        return $turnos;
+    }
 
 }
 
