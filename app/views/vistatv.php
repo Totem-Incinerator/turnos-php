@@ -24,13 +24,14 @@ require_once("../templates/boostrap.php");
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h2>Lista de Espera de Turnos</h2>
+      <h3>Turno:</h3>
       <div class="row">
         <div class="col-5">
           <div class="alert alert-success fw-bolder"  role="alert">
             <?=$turnosiguiente?>
             
           </div>
+          <p>Proximos Turnos en ser atendidos</p>
           <table class="table table-bordered">
             <thead>
               <tr>

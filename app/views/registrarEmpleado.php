@@ -1,10 +1,10 @@
 <?php
-session_start();
+// session_start();
 
-if($_SESSION['auth'] != "true"){
-    require_once("./info.php");
-    exit;
-}
+// if($_SESSION['auth'] != "true"){
+//     require_once("./info.php");
+//     exit;
+// }
 ?>
 <html lang="en">
 <head>

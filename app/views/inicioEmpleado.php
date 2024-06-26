@@ -68,7 +68,7 @@ if($_SESSION['auth'] != "true"){
                             <td><?= $turno['apellidos_cliente'] ?></td>
                             <td><?= $turno["cedula"] ?></td>
                             <td><?= $turno["tipo_turno"] ?></td>
-                            <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalForm" data-id="<?= $turno['id_turno'] ?>">Atender</button></td>
+                            <td><button type="button" class="btn btn-secondary" id="info-turno" data-bs-toggle="modal" data-bs-target="#modalForm" data-id="<?= $turno['id_turno'] ?>">Atender</button></td>
 
                  
 

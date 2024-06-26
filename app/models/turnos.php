@@ -10,7 +10,7 @@ class Turno extends Conexion{
             
         
     // Preparación de la consulta SQL
-    $consulta= $this->db->prepare("SELECT * FROM turnos WHERE Estado = 0 ORDER BY fecha DESC, tipo_turno Desc;");
+    $consulta= $this->db->prepare("SELECT * FROM turnos WHERE Estado = 0 ORDER BY fecha DESC, tipo_turno ASC;");
 
     // Ejecución de la consulta
     $consulta->execute();
@@ -52,7 +52,7 @@ class Turno extends Conexion{
             
         
         // Preparación de la consulta SQL
-        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 0 ORDER BY id_turno DESC LIMIT 6;");
+        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 0 ORDER BY id_turno ASC LIMIT 5;");
     
         // Ejecución de la consulta
         $consulta->execute();
