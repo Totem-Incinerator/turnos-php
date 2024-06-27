@@ -76,7 +76,7 @@ class Turno extends Conexion{
             
         
         // Preparación de la consulta SQL
-        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 1 ORDER BY t.hora_inicio DESC;");
+        $consulta= $this->db->prepare("SELECT * FROM turnos as t WHERE t.estado = 1 ORDER BY fecha, t.hora_inicio DESC;");
     
         // Ejecución de la consulta
         $consulta->execute();
