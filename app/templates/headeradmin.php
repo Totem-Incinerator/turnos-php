@@ -1,6 +1,9 @@
 <!-- ENCABEZADO -->
-<header class="container-fluid bg-success d-flex justify-content-between align-items-center py-2">
+<header class="container-fluid bg-success d-flex justify-content-evenly align-items-center py-2">
       <p class="text-light mb-0 fs-6" > <i class="bi bi-telephone-fill"></i>  Nuestras lineas de atencion -(602)-725-1000</p>
+      <a class="text-light mb-0 fs-6 fw-bold" target="_blank" href="../views/crearTurno.php">Crear Turno</a>
+      <a class="text-light mb-0 fs-6 fw-bold" target="_blank" href="../views/registrarEmpleado.php">Registrar Empleado</a>
+      <a class="text-light mb-0 fs-6 fw-bold" target="_blank" href="../views/vistatv.php">Vista T.V</a>
       <a class="text-light mb-0 fs-6 fw-bold" href="../controllers/salir.php">Salir</a>
 </header>
     <!-- NAVAR O MENU DE INICIO -->

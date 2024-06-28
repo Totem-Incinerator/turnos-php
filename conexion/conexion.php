@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+$_SESSION["test"] = "Hola mundo";
 class Conexion {
     protected $db;
     private $host = "localhost";
