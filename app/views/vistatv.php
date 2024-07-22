@@ -18,15 +18,15 @@ require_once("../templates/boostrap.php");
   $ultimo=$turno->obtenerUltimo();
  
   $turnosiguiente = $ultimo[0]["nombre_cliente"]." ".$ultimo[0]["apellidos_cliente"]." - Turno ". $ultimo[0]["numero_turno"];
-  print_r($turnosiguiente);
+  // print_r($turnosiguiente);
 ?>
 <body> 
 <div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h3>Turno:</h3>
+  <div class="row justify-content-between">
+    <div class="col-md-5 ">
+      <!-- <h3>Turno:</h3> -->
       <div class="row">
-        <div class="col-5">
+        <div class="col-10">
           <div class="alert alert-success fw-bolder"  role="alert">
             <?=$turnosiguiente?>
             
@@ -65,7 +65,11 @@ require_once("../templates/boostrap.php");
             </tbody>
           </table>
         </div>
-        <div class="col-7">
+        
+      </div>
+    </div>
+    <!-- TEST -->
+    <div class="col-6">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
              <!--  <div class="carousel-item active">
@@ -98,8 +102,6 @@ require_once("../templates/boostrap.php");
             </a> -->
           </div>
         </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -116,9 +118,9 @@ require_once("../templates/boostrap.php");
       interval: 1000 // Cambia 2000 por el intervalo de tiempo deseado en milisegundos
     });
   });
-  setTimeout(() => {
-    location.reload()
-  }, 5000)
+  // setTimeout(() => {
+  //   location.reload()
+  // }, 5000)
 </script>
 </body>
    </html> 
