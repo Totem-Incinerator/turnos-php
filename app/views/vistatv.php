@@ -27,8 +27,9 @@ require_once("../templates/boostrap.php");
       <!-- <h3>Turno:</h3> -->
       <div class="row">
         <div class="col-10">
-          <div class="alert alert-success fw-bolder"  role="alert">
-            <?=$turnosiguiente?>
+          <div class="alert alert-success fw-bolder"  role="alert" >
+            <p id="ultimo"></p>
+       <!--      <?=$turnosiguiente?> -->
             
           </div>
           <p>Proximos Turnos en ser atendidos</p>
@@ -39,7 +40,7 @@ require_once("../templates/boostrap.php");
                 <th scope="col">Turno</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tablaturno">
               <!-- Aquí puedes agregar dinámicamente las filas de la tabla si lo necesitas -->
               <tr>
               <?php      
@@ -105,7 +106,8 @@ require_once("../templates/boostrap.php");
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
@@ -118,9 +120,64 @@ require_once("../templates/boostrap.php");
       interval: 1000 // Cambia 2000 por el intervalo de tiempo deseado en milisegundos
     });
   });
+  
+  function generateTableRows(data) {
+    var tableBody = $("#tablaturno"); // Replace with your table body ID
+    tableBody.html(""); // Clear existing rows
+ 
+    $.each(data, function(index, turno) {
+        var row = $("<tr></tr>");
+        var resultado = turno["tipo_turno"] === "preferencial" ? "P" : "G";
+        resultado += turno["numero_turno"];
+ 
+        row.append("<td>" + turno["nombre_cliente"] + "</td>");
+        row.append("<td>" + resultado + "</td>");
+        tableBody.append(row);
+    });
+}
+
+  function hacerpeticion(){
+    $.ajax({
+    type: "GET",
+    url: "http://localhost/turnos-php/app/controllers/actualizarturnos.php",
+    dataType:"json",
+    success: function (data) {
+      $("#ultimo").text(data["ultimo"]);
+     // data=data.pop();
+      generateTableRows(data);
+       console.log(data);
+
+    },
+    error: function(xhr,status,error){
+      console.log(error);
+    }
+   });
+  }
+
+  setInterval(hacerpeticion,2000);
+
   // setTimeout(() => {
-  //   location.reload()
+  //   //location.reload()
+  //   $(document).ready(function(){
+
+  //         $.ajax({
+  //       type: "GET",
+  //       url: "http://localhost/turnos-php/app/controllers/actualizarturnos.php",
+  //       dataType:"json",
+  //       success: function (data) {
+  //           console.log(data);
+
+  //       },
+  //       error: function(xhr,status,error){
+  //         console.log(xhr.statusText);
+  //       }
+  //      });
+
+  //   })
+
   // }, 5000)
+
+
 </script>
 </body>
    </html> 
